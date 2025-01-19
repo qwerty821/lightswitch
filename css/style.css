@@ -1,0 +1,73 @@
+#main-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 80%;
+	margin: 50px auto;
+}
+
+#control-section {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 250px;
+	margin-top: 50px;
+}
+
+#light-bulb {
+	width: 300px;
+}
+
+.btn-switch {
+	padding: 17px 40px;
+	border-radius: 50px;
+	cursor: pointer;
+	border: 0;
+	background-color: white;
+	box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	font-size: 15px;
+	transition: all 0.5s ease;
+}
+
+.btn-switch:hover {
+	letter-spacing: 3px;
+	/* background-color: hsl(261deg 80% 48%); */
+	color: hsl(0, 0%, 0%);
+	box-shadow: rgb(210, 56, 56) 0px 7px 29px 0px;
+}
+
+.btn-switch:active {
+	letter-spacing: 3px;
+	background-color: hsl(261deg 80% 48%);
+	color: hsl(0, 0%, 100%);
+	box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+	transform: translateY(10px);
+	transition: 100ms;
+}
+
+#btn-switch-on {
+	background-color: #fce883;
+}
+#btn-switch-off {
+	background-color: #201f1c;
+	color: #ffffff;
+}
+
+#log-section {
+	margin-top: 50px;
+	padding: 10px 30px;
+	text-align: center;
+	font-size: 30px;
+}
+
+.error-status {
+	color: rgb(148, 13, 13);
+}
+
+.ok-status {
+	color: rgb(6, 98, 6);
+}
+

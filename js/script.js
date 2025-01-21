@@ -1,5 +1,6 @@
 var state = 0;
-var serverAddress = "http://127.0.0.1:5000/";
+var serverAddress = "http://qwerty821.duckdns.org";
+// var serverAddress = "127.0.0.1:1234";
 
 document.getElementById("btn-switch-on").addEventListener("click", () => switchLight(1));
 document.getElementById("btn-switch-off").addEventListener("click", () => switchLight(0));
@@ -17,8 +18,8 @@ async function sendToServer(data) {
     const response = await fetch(serverAddress + route, {
         method: "POST"
     });
-
-    if (response.status == 200) {
+    console.log (response + " " + response.status + " --")
+    if (response == null || response.status == 200) {
         document.getElementById("log-section").innerHTML = "Succes";
         document.getElementById("log-section").classList.remove("error-status");
         document.getElementById("log-section").classList.add("ok-status");

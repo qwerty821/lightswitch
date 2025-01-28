@@ -21,18 +21,10 @@ async function sendToServer(data) {
     const response =  await fetch(serverAddress + route, {
         method: "POST",
         mode: "cors",
-        // headers: {
-        //   "Content-Type": "text/xml",
-        //   "X-PINGOTHER": "pingpong",
-        // },
+      
         body: "data",
       });
 
-
-    // const response = await fetch(serverAddress + route, {
-    //     method: "POST"
-    // });
-    console.log (response + " " + response.status + " --")
     if (response == null || response.status == 200) {
         document.getElementById("log-section").innerHTML = "Succes";
         document.getElementById("log-section").classList.remove("error-status");

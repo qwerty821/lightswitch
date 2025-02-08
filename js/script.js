@@ -1,7 +1,7 @@
 var state = 0;
-// var serverAddress = "http://qwerty821.duckdns.org";  // for final with port forwarding on router
+var serverAddress = "http://qwerty821.duckdns.org";  // for final with port forwarding on router
 
-var serverAddress = "http://89.42.130.7:88"; // local
+// var serverAddress = "http://89.42.130.7:88"; // local
 
 // var serverAddress = "https://2e67-81-180-218-61.ngrok-free.app" // without port forwarding
 

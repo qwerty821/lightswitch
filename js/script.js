@@ -1,6 +1,8 @@
 var state = 0;
-var serverAddress = "http://qwerty821.duckdns.org";
-// var serverAddress = "127.0.0.1:1234";
+// var serverAddress = "http://qwerty821.duckdns.org";  // for final with port forwarding on router
+var serverAddress = "http://89.42.130.7:88"; // local
+
+// var serverAddress = "https://2e67-81-180-218-61.ngrok-free.app" // without port forwarding
 
 document.getElementById("btn-switch-on").addEventListener("click", () => switchLight(1));
 document.getElementById("btn-switch-off").addEventListener("click", () => switchLight(0));
@@ -15,6 +17,18 @@ async function switchLight(x) {
 
 async function sendToServer(data) {
     route = state == 1 ? "/on" : "/off"
+
+    const resp =  await fetch(serverAddress + route, {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "text/xml",
+          "X-PINGOTHER": "pingpong",
+        },
+        body: "data",
+      });
+
+
     const response = await fetch(serverAddress + route, {
         method: "POST"
     });

@@ -1,5 +1,6 @@
 var state = 0;
 // var serverAddress = "http://qwerty821.duckdns.org";  // for final with port forwarding on router
+
 var serverAddress = "http://89.42.130.7:88"; // local
 
 // var serverAddress = "https://2e67-81-180-218-61.ngrok-free.app" // without port forwarding
@@ -18,6 +19,7 @@ async function switchLight(x) {
 async function sendToServer(data) {
     route = state == 1 ? "/on" : "/off"
 
+ 
     const resp =  await fetch(serverAddress + route, {
         method: "POST",
         mode: "cors",
@@ -33,6 +35,9 @@ async function sendToServer(data) {
         method: "POST"
     });
     console.log (response + " " + response.status + " --")
+ 
+
+ 
     if (response == null || response.status == 200) {
         document.getElementById("log-section").innerHTML = "Succes";
         document.getElementById("log-section").classList.remove("error-status");
